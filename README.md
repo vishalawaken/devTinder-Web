@@ -14,3 +14,6 @@
 - CORS - install cors in backend => add middleware to with configurations:origin,credentials true
 - Whenever you are making an Api call pass  axios ==> {withCrednetials:true}
 - Install Redux ToolKit and react-redux =>configureStore ==> Provider ==> create a slice ==> add reducer to the store
+- You should not be able to access other routes without login
+- If Token is not present , redirect user to login page
+- LogOut Feature
