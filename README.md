@@ -17,3 +17,5 @@
 - You should not be able to access other routes without login
 - If Token is not present , redirect user to login page
 - LogOut Feature
+- Get the feed and add the Feed in the Store
+- Edit Profile Feature Built
