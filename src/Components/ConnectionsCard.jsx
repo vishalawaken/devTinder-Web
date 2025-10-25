@@ -12,10 +12,10 @@ const ConnectionsCard = ({user}) => {
   <div className="card-body items-center text-center">
     <h2 className="card-title">{user.firstName} {user.lastName}</h2>
     <p>{user.about}</p>
-    <div className="card-actions">
+    {/* <div className="card-actions">
       <button className="btn btn-primary">Ignore</button>
       <button className="btn btn-secondary">Interested</button>
-    </div>
+    </div> */}
   </div>
 </div>
   );
