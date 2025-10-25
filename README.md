@@ -19,3 +19,4 @@
 - LogOut Feature
 - Get the feed and add the Feed in the Store
 - Edit Profile Feature Built
+- Show Toast Message after profile is saved
