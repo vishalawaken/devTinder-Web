@@ -22,3 +22,4 @@
 - Show Toast Message after profile is saved
 - New Page to see See all my Connections 
 - New Page to See all my Connection Requests
+- SignUp Feature
