@@ -20,3 +20,5 @@
 - Get the feed and add the Feed in the Store
 - Edit Profile Feature Built
 - Show Toast Message after profile is saved
+- New Page to see See all my Connections 
+- New Page to See all my Connection Requests

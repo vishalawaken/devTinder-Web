@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import { BASE_URL } from "../utils/constants";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { addRequests } from "../utils/requestSlice";
+import { addRequests, removeRequests } from "../utils/requestSlice";
+
 
 const Requests = () => {
   const requests = useSelector((store) => store.requests);
   console.log(requests);
+  
 
   const dispatch = useDispatch();
   const fetchRequests = async () => {
@@ -20,6 +22,15 @@ const Requests = () => {
     }
   };
 
+  const reviewRequest=async(status,_id)=>{
+    try {
+        const res = await axios.post(BASE_URL+"/request/review/"+status+"/"+_id,{},{withCredentials:true})
+        dispatch(removeRequests(_id));
+    } catch (error) {
+        console.error(error)
+    }
+  }
+
   useEffect(() => {
     fetchRequests();
   }, []);
@@ -29,7 +40,7 @@ const Requests = () => {
   }
 
   if (requests.length === 0) {
-    return <h1>No Requests Found</h1>;
+    return <h1 className="flex justify-center my-10">No Requests Found</h1>;
   }
   return (
     <div className=" text-center items-center justify-center my-10 flex flex-col gap-4">
@@ -58,8 +69,8 @@ const Requests = () => {
                 {age} {gender}
               </p>
               <div>
-                <button className="btn btn-soft btn-primary m-2">Accept</button>
-                <button className="btn btn-soft btn-secondary m-2">Reject</button>
+                <button onClick={()=>reviewRequest("accepted",request._id)} className="btn btn-soft btn-primary m-2">Accept</button>
+                <button onClick={()=>reviewRequest("rejected",request._id)} className="btn btn-soft btn-secondary m-2">Reject</button>
               </div>
             </div>
           </div>

@@ -27,12 +27,19 @@ const Feed = () => {
     getFeed();
   }, []);
 
+  if(!feed){
+    return <div>Loading.....</div>
+  }
+
+  if(feed.length<=0)return <h1>No More Users Present</h1>
+
   return feed && <div className="flex justify-center items-center flex-wrap gap-4">
-    {
+    {/* {
       feed.map((user,index)=>{
         return <UserCard user={user} key={index}></UserCard>
       })
-    }
+    } */}
+    <UserCard user={feed[0]}></UserCard>
   </div>;
 };
 
