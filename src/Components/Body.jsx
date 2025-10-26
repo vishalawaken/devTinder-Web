@@ -31,7 +31,10 @@ const Body = () => {
       fetchUser();
   },[])
   return (
-    <div>
+    <div
+    className="bg-[url('https://i.pinimg.com/736x/68/e9/e8/68e9e879994d9a7b124bade7d8c63ac6.jpg')]
+               bg-no-repeat bg-cover bg-center h-screen w-full "
+  >
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>

@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFeed } from "../utils/feedSlice";
 import UserCard from "./UserCard";
 
+
 const Feed = () => {
   const dispatch = useDispatch();
+ 
   const feed = useSelector((store) => store.feed);
   console.log("Feed state:", feed);
 
@@ -28,7 +30,7 @@ const Feed = () => {
   }, []);
 
   if(!feed){
-    return <div>Loading.....</div>
+    return <h1>Loading...</h1>
   }
 
   if(feed.length<=0)return <h1>No More Users Present</h1>

@@ -27,7 +27,12 @@ const Navbar = () => {
       <div className="flex-1">
         <span className="flex items-center text-2xl">
           <FaCodeFork />
-          <Link to="/" className="btn btn-ghost text-xl">DevTinder</Link>
+          {/* <Link to="/" className="btn btn-ghost text-xl">DevTinder</Link> */}
+          {user ? (
+  <Link to="/" className="btn btn-ghost text-xl">DevTinder</Link>
+) : (
+  <Link to="/login" className="btn btn-ghost text-xl">DevTinder</Link>
+)}
         </span>
       </div>
       <div className="flex gap-2">
